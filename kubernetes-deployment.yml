@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-minikube-deployment
+  labels:
+    app: spring-boot-telekomV01
 spec:
   selector:
     matchLabels:
