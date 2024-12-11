@@ -1,20 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-minikube-deployment
-  labels:
-    app: spring-boot-telekomV01
+  name: jenkins-instance-deployment
 spec:
   selector:
     matchLabels:
-      app: spring-boot-telekomV01
+      app: jenkins-instance
   template:
     metadata:
       labels:
-        app: spring-boot-telekomV01
+        app: jenkins-instance
     spec:
       containers:
-        - name: spring-boot-telekomV01
+        - name: jenkins-instance
           image: ibrahimgokyar/opendartrepo:spring-boot-telekomV01
+          imagePullPolicy: Always
           ports:
             - containerPort: 8085
